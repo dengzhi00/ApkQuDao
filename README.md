@@ -12,6 +12,10 @@ contents=优亿,魅族;
 </br>
 apkname=youyi,meizu;
 </br>
+keyPassword=123456;
+</br>
+storePassword=123456;
+</br>
 
 可生成jar包
 </br>
