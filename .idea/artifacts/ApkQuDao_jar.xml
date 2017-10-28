@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ApkQuDao:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ApkQuDao_jar</output-path>
+    <root id="archive" name="ApkQuDao.jar">
+      <element id="module-output" name="ApkQuDao" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/ant.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/commons-compress-1.8.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
