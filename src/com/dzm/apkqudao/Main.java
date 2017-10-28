@@ -36,6 +36,8 @@ public class Main {
             String keyAlias = "";
             String content1 = "";
             String apkName = "";
+            String keyPassword = "";
+            String storePassword = "";
             for (String txt:readTxts){
                 if(txt.contains("app_path")){
                     srcPath = txt.split("=")[1];
@@ -47,6 +49,10 @@ public class Main {
                     content1 = txt.split("=")[1];
                 }else if(txt.contains("apkname")){
                     apkName = txt.split("=")[1];
+                }else if(txt.contains("keyPassword")){
+                    keyPassword = txt.split("=")[1];
+                }else if(txt.contains("storePassword")){
+                    storePassword = txt.split("=")[1];
                 }
             }
 
@@ -114,9 +120,9 @@ public class Main {
 
                 ZipUtil.compress(prefixName,targetPath+"\\"+unsing+"\\"+apkn+"_unsin.apk");
 
-                batStr+="jarsigner -verbose -keystore "+keystore+" -signedjar "+targetPath+"\\"+sing+"\\"+apkn+"_sin.apk "+targetPath+"\\"+unsing+"\\"+apkn+"_unsin.apk"+" "+keyAlias+"\n";
+                batStr+="jarsigner -verbose -keystore "+keystore+" -storepass "+storePassword+" -keypass "+keyPassword+" -signedjar "+targetPath+"\\"+sing+"\\"+apkn+"_sin.apk "+targetPath+"\\"+unsing+"\\"+apkn+"_unsin.apk"+" "+keyAlias+"\n";
 
-                System.out.println("jarsigner -verbose -keystore "+keystore+" -signedjar "+targetPath+"\\"+sing+"\\"+apkn+"_sin.apk "+targetPath+"\\"+unsing+"\\"+apkn+".apk"+" "+keyAlias);
+                System.out.println("jarsigner -verbose -keystore "+keystore+" -storepass "+storePassword+" -keypass "+keyPassword+" -signedjar "+targetPath+"\\"+sing+"\\"+apkn+"_sin.apk "+targetPath+"\\"+unsing+"\\"+apkn+"_unsin.apk"+" "+keyAlias);
             }
             File file = new File("qudao.bat");
             FileOutputStream fos = new FileOutputStream(file);
