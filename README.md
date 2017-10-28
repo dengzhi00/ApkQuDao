@@ -1,6 +1,6 @@
 # ApkQuDao
 使用方法：dzm_qudao.txt配置
-配置文件配置：
+配置文件配置：\n
 app_path=app-release_aligned_signed.apk;
 keystore=ej_v3.jks;
 keyAlias=ej_v3;
